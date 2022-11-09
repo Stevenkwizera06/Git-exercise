@@ -242,3 +242,152 @@ To https://github.com/Stevenkwizera06/Git-exercise.git
 Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
 andelas-MacBook-Pro:Git-exercises andela$ 
 ```
+## Bundle 2
+### Exercise 2
+```
+andelas-MacBook-Pro:Git-exercises andela$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 6 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+andelas-MacBook-Pro:Git-exercises andela$ git pull
+Updating a341c4b..f2aff36
+Fast-forward
+ README.md     | 240 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ about.html    |  13 +++++
+ home.html     |  13 +++++
+ services.html |  13 +++++
+ 4 files changed, 279 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 services.html
+andelas-MacBook-Pro:Git-exercises andela$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/service-redesign
+nothing to commit, working tree clean
+andelas-MacBook-Pro:Git-exercises andela$ git add services.html
+andelas-MacBook-Pro:Git-exercises andela$ git commit "added changes in services.html"
+error: pathspec 'added changes in services.html' did not match any file(s) known to git
+andelas-MacBook-Pro:Git-exercises andela$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+andelas-MacBook-Pro:Git-exercises andela$ git push --set-upstream origin ft/service-redesign
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/Stevenkwizera06/Git-exercise/pull/new/ft/service-redesign
+remote: 
+To https://github.com/Stevenkwizera06/Git-exercise.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+Branch 'ft/service-redesign' set up to track remote branch 'ft/service-redesign' from 'origin'.
+andelas-MacBook-Pro:Git-exercises andela$ git add services.html
+andelas-MacBook-Pro:Git-exercises andela$ git commit "added changes in services.html"
+error: pathspec 'added changes in services.html' did not match any file(s) known to git
+andelas-MacBook-Pro:Git-exercises andela$ git push
+Everything up-to-date
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/service-redesign
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   services.html
+
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit "added changes in services.html"
+error: pathspec 'added changes in services.html' did not match any file(s) known to git
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/service-redesign
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   services.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   services.html
+
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added some challenges in services.html"
+[ft/service-redesign c0e0f81] added some challenges in services.html
+ 1 file changed, 5 insertions(+)
+andelas-MacBook-Pro:Git-exercises andela$ git pussh
+git: 'pussh' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+andelas-MacBook-Pro:Git-exercises andela$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 371 bytes | 371.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Stevenkwizera06/Git-exercise.git
+   f2aff36..c0e0f81  ft/service-redesign -> ft/service-redesign
+andelas-MacBook-Pro:Git-exercises andela$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+andelas-MacBook-Pro:Git-exercises andela$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "made some changes in service.html file"
+[main b006c5a] made some changes in service.html file
+ 1 file changed, 1 insertion(+)
+andelas-MacBook-Pro:Git-exercises andela$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Stevenkwizera06/Git-exercise.git
+   f2aff36..b006c5a  main -> main
+andelas-MacBook-Pro:Git-exercises andela$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+andelas-MacBook-Pro:Git-exercises andela$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/service-redesign
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "resolved conflicts"
+[ft/service-redesign 9f6cc83] resolved conflicts
+andelas-MacBook-Pro:Git-exercises andela$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 350 bytes | 350.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Stevenkwizera06/Git-exercise.git
+   c0e0f81..9f6cc83  ft/service-redesign -> ft/service-redesign
+```
