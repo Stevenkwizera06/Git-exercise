@@ -690,3 +690,110 @@ remote: Resolving deltas: 100% (10/10), done.
 To https://github.com/Stevenkwizera06/git-exercise-2.git
  * [new branch]      main -> main
 ```
+
+## Bundle 4
+### Exercise 2
+```
+andelas-MacBook-Pro:Git-exercises andela$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added the footer section"
+[ft/footer b8f13d9] added the footer section
+ 1 file changed, 18 insertions(+)
+ create mode 100644 footer.html
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added a copyright"
+[ft/footer b26edb1] added a copyright
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+andelas-MacBook-Pro:Git-exercises andela$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+andelas-MacBook-Pro:Git-exercises andela$ git push --set-upstream origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 818 bytes | 45.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/Stevenkwizera06/Git-exercise/pull/new/ft/footer
+remote: 
+To https://github.com/Stevenkwizera06/Git-exercise.git
+ * [new branch]      ft/footer -> ft/footer
+Branch 'ft/footer' set up to track remote branch 'ft/footer' from 'origin'.
+andelas-MacBook-Pro:Git-exercises andela$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+andelas-MacBook-Pro:Git-exercises andela$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+andelas-MacBook-Pro:Git-exercises andela$ git merge --squash ft/footer
+Updating 74299ff..b26edb1
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 footer.html
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/squashing
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   footer.html
+
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "footer changes squashing"
+[ft/squashing 1168e4d] footer changes squashing
+ 1 file changed, 22 insertions(+)
+ create mode 100644 footer.html
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/squashing
+nothing to commit, working tree clean
+andelas-MacBook-Pro:Git-exercises andela$ git log
+commit 1168e4dc692f5ce2bc53be4aef96c53702f75115 (HEAD -> ft/squashing)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:59:25 2022 +0200
+
+    footer changes squashing
+
+commit 74299ff5106ff4375a432b9e675c0bc65bfbfbe3 (origin/main, main)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:45:07 2022 +0200
+
+    added the commands in readme file
+
+commit bf7e1c45687943ec2d056393de082f373fe2c81a (git-copy/main)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:39:31 2022 +0200
+
+    added new changes in home page
+
+commit ad2c4d0f1c724b8d9e6ebaa3dbec25714b9a01e7
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:14:16 2022 +0200
+andelas-MacBook-Pro:Git-exercises andela$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+andelas-MacBook-Pro:Git-exercises andela$ git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 533 bytes | 266.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/Stevenkwizera06/Git-exercise/pull/new/ft/squashing
+remote: 
+To https://github.com/Stevenkwizera06/Git-exercise.git
+ * [new branch]      ft/squashing -> ft/squashing
+Branch 'ft/squashing' set up to track remote branch 'ft/squashing' from 'origin'.
+```
