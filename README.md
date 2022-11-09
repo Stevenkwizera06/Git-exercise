@@ -52,6 +52,9 @@ On branch dev
 nothing to commit, working tree clean
 andelas-MacBook-Pro:Git-exercises andela$ git branch -D test
 Deleted branch test (was a341c4b).
+
+## Bundle 1
+### Exercise 2
 andelas-MacBook-Pro:Git-exercises andela$ git status
 On branch dev
 Untracked files:
@@ -194,6 +197,9 @@ On branch dev
 Your branch is up to date with 'origin/dev'.
 
 nothing to commit, working tree clean
+
+## Bundle 2
+### Exercise 1
 andelas-MacBook-Pro:Git-exercises andela$ git checkout -b ft/bundle-2
 Switched to a new branch 'ft/bundle-2'
 andelas-MacBook-Pro:Git-exercises andela$ git status
