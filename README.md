@@ -512,3 +512,181 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/Stevenkwizera06/Git-exercise.git
    51b82b7..20cc689  ft/faq-page -> ft/faq-page
 ```
+
+## Bundle 3
+### Exercise 2
+```
+andelas-MacBook-Pro:Git-exercises andela$ git checkout -b ft/home-page-redesign
+M       README.md
+Switched to a new branch 'ft/home-page-redesign'
+andelas-MacBook-Pro:Git-exercises andela$ git checkout main
+M       README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added changes on main branch "
+[main ad2c4d0] added changes on main branch
+ 2 files changed, 272 insertions(+), 1 deletion(-)
+andelas-MacBook-Pro:Git-exercises andela$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 3.43 KiB | 3.43 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Stevenkwizera06/Git-exercise.git
+   b006c5a..ad2c4d0  main -> main
+andelas-MacBook-Pro:Git-exercises andela$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+andelas-MacBook-Pro:Git-exercises andela$ git rebase main
+First, rewinding head to replay your work on top of it...
+Applying: added team.html file
+Applying: added new contact page
+Applying: added faq page
+Applying: Revert "added team.html file"
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+andelas-MacBook-Pro:Git-exercises andela$ git log
+commit e52226f17371dc5cc6635aa85282ad50423ece2c (HEAD -> ft/home-page-redesign)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:03:26 2022 +0200
+
+    Revert "added team.html file"
+    
+    This reverts commit f4498ecca38c9401d46b6173319a59d2276ff696.
+
+commit 2c61553ac31f671084acab75546719a6d7364792
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 14:53:21 2022 +0200
+
+    added faq page
+
+commit fe654060d6539ea494bad06519d337e6abdebd94
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 14:48:19 2022 +0200
+
+    added new contact page
+
+commit 11ec588992ad283a2ec9edc7b9e014500d4c5066
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 14:35:16 2022 +0200
+
+    added team.html file
+
+commit ad2c4d0f1c724b8d9e6ebaa3dbec25714b9a01e7 (origin/main, main)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 15:14:16 2022 +0200
+
+    added changes on main branch
+
+commit b006c5a26700beb4030da9478d15146e365ef94e
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 14:16:39 2022 +0200
+
+    made some changes in service.html file
+
+commit f2aff365762b09e4660eaa3cf1d13b4ca4704824
+Merge: a341c4b 4f9737f
+Author: Chrissie <chrissiemhrk@gmail.com>
+Date:   Wed Nov 9 12:08:56 2022 +0200
+
+    Merge pull request #1 from Stevenkwizera06/ft/bundle-2
+    
+    new pages were added
+
+commit 4f9737fbfd822add155c3bf8f5acd325e6dfe4d1 (origin/ft/bundle-2, ft/bundle-2)
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 11:39:34 2022 +0200
+
+    added services.html
+
+commit c47c028207bd7d35d302b6c6e5c4e0215cf0143f
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 11:36:46 2022 +0200
+
+    added services.html
+
+commit ef4a8b1dd5808d71e0727dcbcb26aaa2e4893edd
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+Date:   Wed Nov 9 11:25:31 2022 +0200
+
+    added services.html
+
+commit e318cbe746d1c0c9d5bc56a09dd5457519a3343a
+Author: Stevenkwizera06 <kwiste06@gmail.com>
+andelas-MacBook-Pro:Git-exercises andela$ git add .
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added changes in home page"
+[ft/home-page-redesign 3c0ad45] added changes in home page
+ 1 file changed, 1 insertion(+)
+andelas-MacBook-Pro:Git-exercises andela$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+andelas-MacBook-Pro:Git-exercises andela$ git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.62 KiB | 276.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/Stevenkwizera06/Git-exercise/pull/new/ft/home-page-redesign
+remote: 
+To https://github.com/Stevenkwizera06/Git-exercise.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redesign' from 'origin'.
+```
+
+## Bundle 4
+### Exercise 1
+```
+andelas-MacBook-Pro:Git-exercises andela$ git checkout main
+M       README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+andelas-MacBook-Pro:Git-exercises andela$ git remote add git-copy https://github.com/Stevenkwizera06/git-exercise-2.git
+andelas-MacBook-Pro:Git-exercises andela$ git remote
+git-copy
+origin
+andelas-MacBook-Pro:Git-exercises andela$ git add home.html
+andelas-MacBook-Pro:Git-exercises andela$ git commit -m "added new changes in home page"
+[main bf7e1c4] added new changes in home page
+ 1 file changed, 1 insertion(+)
+andelas-MacBook-Pro:Git-exercises andela$ git push origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Stevenkwizera06/Git-exercise.git
+   ad2c4d0..bf7e1c4  main -> main
+andelas-MacBook-Pro:Git-exercises andela$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+andelas-MacBook-Pro:Git-exercises andela$ git push git-copy
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (30/30), 6.85 KiB | 2.28 MiB/s, done.
+Total 30 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/Stevenkwizera06/git-exercise-2.git
+ * [new branch]      main -> main
+```
